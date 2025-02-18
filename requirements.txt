@@ -1,4 +1,2 @@
 qubots
 numpy
-math
-random
