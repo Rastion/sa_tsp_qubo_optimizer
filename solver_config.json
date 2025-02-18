@@ -1,0 +1,44 @@
+{
+    "entry_point": "tsp_qubo_optimizer:TSPQUBOOptimizer",
+    "default_params": {
+      "time_limit": 300,
+      "num_iterations": 10000,
+      "initial_temperature": 10.0,
+      "cooling_rate": 0.999,
+      "penalty_multiplier": null
+    },
+    "optimizer_type": "QUBO",
+    "description": "QUBO-based TSP optimizer that formulates the TSP as a QUBO and uses simulated annealing to (approximately) minimize the QUBO cost. The formulation includes an objective term for the tour cost and penalty terms to enforce that each city is visited exactly once and that each tour position is occupied by exactly one city.",
+    "compatible_problems": [
+      "Traveling Salesman Problem"
+    ],
+    "parameters": {
+      "time_limit": {
+        "type": "int",
+        "description": "Maximum allowed time for optimization (in seconds)."
+      },
+      "num_iterations": {
+        "type": "int",
+        "description": "Number of iterations to perform in the simulated annealing solver."
+      },
+      "initial_temperature": {
+        "type": "float",
+        "description": "Starting temperature for the simulated annealing process."
+      },
+      "cooling_rate": {
+        "type": "float",
+        "description": "Multiplicative cooling factor applied at each iteration (e.g., 0.999)."
+      },
+      "penalty_multiplier": {
+        "type": "float",
+        "description": "Penalty coefficient used in the QUBO formulation. If set to null, a default value (e.g. max_distance * n) will be used."
+      }
+    },
+    "requirements": [
+      "numpy",
+      "qubots",
+      "random",
+      "math"
+    ]
+  }
+  

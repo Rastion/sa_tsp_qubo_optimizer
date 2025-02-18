@@ -1,0 +1,4 @@
+qubots
+numpy
+math
+random
